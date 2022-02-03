@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "react-native-yet-another-datepicker",
+    "slug": "react-native-yet-another-datepicker",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "react-native-yet-another-datepicker"
+}
