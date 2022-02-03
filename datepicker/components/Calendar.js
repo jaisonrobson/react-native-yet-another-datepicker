@@ -157,6 +157,9 @@ const styles = StyleSheet.create({
     headerItem: {
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: 'pink',
+        minWidth: 20,
+        minHeight: 20,
         width: 35,
         height: 35,
     },
@@ -167,14 +170,18 @@ const styles = StyleSheet.create({
     topItem: {
         justifyContent: 'center',
         alignItems: 'center',
+        minHeight: 20,
         height: 35,
     },
     topItemLabel: {
         fontSize: 16,
     },
     touchableItem: {
+        backgroundColor: 'green',
         justifyContent: 'center',
         alignItems: 'center',
+        minWidth: 20,
+        minHeight: 20,
         width: 35,
         height: 35,
     },
@@ -184,6 +191,8 @@ const styles = StyleSheet.create({
     selectedTouchableItem: {
         justifyContent: 'center',
         alignItems: 'center',
+        minWidth: 20,
+        minHeight: 20,
         width: 35,
         height: 35,
         borderWidth: 2,
@@ -191,6 +200,7 @@ const styles = StyleSheet.create({
         borderColor: 'black',
     },
     hr: {
+        flex: 1,
         flexGrow: 1,
         borderColor: '#DDDDDD',
         borderBottomWidth: 1,

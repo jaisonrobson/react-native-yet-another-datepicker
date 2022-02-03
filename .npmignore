@@ -1,0 +1,7 @@
+android/
+ios/
+App.js
+.gitattributes
+app.json
+babel.config.js
+metro.config.js

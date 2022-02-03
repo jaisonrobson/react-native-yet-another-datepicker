@@ -1,6 +1,6 @@
 {
   "name": "react-native-yet-another-datepicker",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A react native simple date picker component without dependencies",
   "keywords": [
     "date-picker",
@@ -28,5 +28,5 @@
   "devDependencies": {
     "@babel/core": "^7.12.9"
   },
-  "private": true
+  "private": false
 }

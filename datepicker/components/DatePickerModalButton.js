@@ -8,7 +8,7 @@ const DatePicker = ({ date, onChangeDate }) => (
     <Calendar
         initialValue={date}
         onChangeDate={onChangeDate}
-        tableStyle={{ marginBottom: 10, padding: 0 }}
+        tableStyle={{ backgroundColor: 'yellow' }}
     />
 )
 

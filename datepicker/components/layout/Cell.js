@@ -5,7 +5,7 @@ export default Cell = ({ style = {}, ...props }) => <View style={[styles.cell, s
 
 const styles = StyleSheet.create({
     cell: {
-        margin: 7,
+        padding: 7,
         flexGrow: 1,
     },
 });
