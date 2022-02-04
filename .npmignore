@@ -5,3 +5,6 @@ App.js
 app.json
 babel.config.js
 metro.config.js
+.yarn.lock
+.buckconfig
+entirePackage.json
