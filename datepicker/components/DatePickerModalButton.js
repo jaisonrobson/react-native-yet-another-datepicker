@@ -8,7 +8,7 @@ const DatePicker = ({ date, onChangeDate }) => (
     <Calendar
         initialValue={date}
         onChangeDate={onChangeDate}
-        tableStyle={{ backgroundColor: 'yellow' }}
+        tableStyle={{ backgroundColor: 'yellow', marginVertical: 20 }}
     />
 )
 
@@ -45,7 +45,7 @@ const DatePickerModalButton = ({
         >
             <ModalButton.Content>
                 {() => (
-                    <ModalButton.Table>
+                    <ModalButton.Table style={{ padding: 15 }}>
                         <ModalButton.Row>
                             <DatePicker date={date} onChangeDate={onChangeCalendarDate} />
                         </ModalButton.Row>

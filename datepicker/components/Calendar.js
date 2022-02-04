@@ -17,12 +17,12 @@ const TopItem = withCalendarConsumer(
 const TopItemLabel = ({ style = {}, ...props }) => <Text style={[styles.topItemLabel, style]} {...props} />
 const HeaderItem = withCalendarConsumer(
     ({ style = {}, calendarProps: { screenData }, ...props }) =>
-        <View style={[styles.headerItem, { ...style, width: Math.floor(screenData / 8) }]} {...props} />
+        <View style={[styles.headerItem, { ...style, width: Math.floor(screenData / 9) }]} {...props} />
 )
 const HeaderItemLabel = ({ style = {}, ...props }) => <Text style={[styles.headerItemLabel, style]} {...props} />
 const TouchableItem = withCalendarConsumer(
     ({ style = {}, calendarProps: { screenData }, ...props }) =>
-        <TouchableOpacity style={[styles.touchableItem, { ...style, width: Math.floor(screenData / 8) }]} {...props} />
+        <TouchableOpacity style={[styles.touchableItem, { ...style, width: Math.floor(screenData / 9) }]} {...props} />
 )
 const TouchableItemLabel = ({ style = {}, ...props }) => <Text style={[styles.touchableItemLabel, style]} {...props} />
 const HR = ({ style = {}, ...props }) => <View style={[styles.hr, style]} {...props} />
@@ -89,11 +89,9 @@ const NextMonthButton = withCalendarConsumer(({
     return <TouchableItem style={nextMonthButtonStyle} onPress={onPressNextMonth}>{nextMonthButtonContent}</TouchableItem>
 })
 
-const ControlsRow = () => (
-    <Row style={{ backgroundColor: 'blue' }}>
+const ControlsRow = ({ style }) => (
+    <Row style={{ backgroundColor: 'blue', ...style }}>
         <Cell><MonthDisplay /></Cell>
-
-        {/* <Cell style={{ flexGrow: 2 }} /> */}
 
         <Cell style={{ flexGrow: 0 }}>
             <PreviousMonthButton />
@@ -118,8 +116,8 @@ const HeaderRow = () => (
     </Row>
 )
 
-const HRRow = () => (
-    <Row>
+const HRRow = ({ style }) => (
+    <Row style={[style, { marginVertical: 8 }]}>
         <HR />
     </Row>
 )
@@ -205,6 +203,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderRadius: 20,
         borderColor: 'black',
+        backgroundColor: 'white',
     },
     hr: {
         flex: 1,
