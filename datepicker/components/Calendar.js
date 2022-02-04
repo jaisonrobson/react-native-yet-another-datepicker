@@ -12,20 +12,20 @@ const PreviousSign = () => <Text>{'<'}</Text>
 const NextSign = () => <Text>{'>'}</Text>
 const TopItem = withCalendarConsumer(
     ({ style = {}, calendarProps: { screenData }, ...props }) =>
-        <View style={[styles.topItem, { ...style, width: Math.floor(screenData / 3) }]} {...props} />
+        <View style={{ ...styles.topItem, ...style, width: Math.floor(screenData / 3) }} {...props} />
 )
-const TopItemLabel = ({ style = {}, ...props }) => <Text style={[styles.topItemLabel, style]} {...props} />
+const TopItemLabel = ({ style = {}, ...props }) => <Text style={{ ...styles.topItemLabel, ...style }} {...props} />
 const HeaderItem = withCalendarConsumer(
     ({ style = {}, calendarProps: { screenData }, ...props }) =>
-        <View style={[styles.headerItem, { ...style, width: Math.floor(screenData / 9) }]} {...props} />
+        <View style={{ ...styles.headerItem, ...style, width: Math.floor(screenData / 9) }} {...props} />
 )
-const HeaderItemLabel = ({ style = {}, ...props }) => <Text style={[styles.headerItemLabel, style]} {...props} />
+const HeaderItemLabel = ({ style = {}, ...props }) => <Text style={{ ...styles.headerItemLabel, ...style }} {...props} />
 const TouchableItem = withCalendarConsumer(
     ({ style = {}, calendarProps: { screenData }, ...props }) =>
-        <TouchableOpacity style={[styles.touchableItem, { ...style, width: Math.floor(screenData / 9) }]} {...props} />
+        <TouchableOpacity style={{ ...styles.touchableItem, ...style, ...{ width: Math.floor(screenData / 9) } }} {...props} />
 )
-const TouchableItemLabel = ({ style = {}, ...props }) => <Text style={[styles.touchableItemLabel, style]} {...props} />
-const HR = ({ style = {}, ...props }) => <View style={[styles.hr, style]} {...props} />
+const TouchableItemLabel = ({ style = {}, ...props }) => <Text style={{ ...styles.touchableItemLabel, ...style }} {...props} />
+const HR = ({ style = {}, ...props }) => <View style={{ ...styles.hr, ...style }} {...props} />
 const weekDays = [...Array.from(Array(7).keys())]
 
 const DayButton = withCalendarConsumer(({
@@ -43,8 +43,8 @@ const DayButton = withCalendarConsumer(({
     const labelStyle = !moment(day).isSame(selectedDate, 'month') && { color: '#b3b3b3', ...notMonthlyTouchableItemLabelStyle }
 
     return (
-        <TouchableItem onPress={onPress} style={[itemStyle, touchableItemStyle]}>
-            <TouchableItemLabel style={[labelStyleProp, labelStyle]}>{moment(day).format('DD')}</TouchableItemLabel>
+        <TouchableItem onPress={onPress} style={{ ...itemStyle, ...touchableItemStyle }}>
+            <TouchableItemLabel style={{ ...labelStyleProp, ...labelStyle }}>{moment(day).format('DD')}</TouchableItemLabel>
         </TouchableItem>
     )
 })
@@ -117,7 +117,7 @@ const HeaderRow = () => (
 )
 
 const HRRow = ({ style }) => (
-    <Row style={[style, { marginVertical: 8 }]}>
+    <Row style={{ ...style, marginVertical: 8 }}>
         <HR />
     </Row>
 )

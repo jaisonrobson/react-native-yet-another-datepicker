@@ -18,7 +18,7 @@ const CancelModalButton = withModalConsumer(({
     children = <DefaultCancelModalButtonContent />,
 }) => (
     <TouchableOpacity
-        style={[styles.cancelModalButton, style]}
+        style={{ ...styles.cancelModalButton, ...style }}
         onPress={onPressCancelModalButton}
     >
         {children}
@@ -33,7 +33,7 @@ const ConfirmModalButton = withModalConsumer(({
     children = <DefaultConfirmModalButtonContent />,
 }) => (
     <TouchableOpacity
-        style={[styles.confirmModalButton, style]}
+        style={{ ...styles.confirmModalButton, ...style }}
         onPress={onPressConfirmModalButton}
     >
         {children}
@@ -48,15 +48,15 @@ const OpenModalButton = withModalConsumer(({
     },
 }) => (
     <TouchableOpacity
-        style={[styles.openModalButton, openModalButtonStyle]}
+        style={{ ...styles.openModalButton, ...openModalButtonStyle }}
         onPress={onPressOpenModalButton}
     >
         {openModalButtonContent}
     </TouchableOpacity>
 ))
 
-const Board = ({ boardStyle, ...props }) => <View style={[styles.board, boardStyle]} {...props} />
-const ModalBackground = ({ modalBackgroundStyle, ...props }) => <View style={[styles.modalBackground, modalBackgroundStyle]} {...props} />
+const Board = ({ boardStyle, ...props }) => <View style={{ ...styles.board, ...boardStyle }} {...props} />
+const ModalBackground = ({ modalBackgroundStyle, ...props }) => <View style={{ ...styles.modalBackground, ...modalBackgroundStyle }} {...props} />
 
 const ModalContent = withModalConsumer(({
     children,
