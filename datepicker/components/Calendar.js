@@ -10,11 +10,20 @@ import Cell from "./layout/Cell"
 
 const PreviousSign = () => <Text>{'<'}</Text>
 const NextSign = () => <Text>{'>'}</Text>
-const TopItem = ({ style = {}, ...props }) => <View style={[styles.topItem, style]} {...props} />
+const TopItem = withCalendarConsumer(
+    ({ style = {}, calendarProps: { screenData }, ...props }) =>
+        <View style={[styles.topItem, { ...style, width: Math.floor(screenData / 3) }]} {...props} />
+)
 const TopItemLabel = ({ style = {}, ...props }) => <Text style={[styles.topItemLabel, style]} {...props} />
-const HeaderItem = ({ style = {}, ...props }) => <View style={[styles.headerItem, style]} {...props} />
+const HeaderItem = withCalendarConsumer(
+    ({ style = {}, calendarProps: { screenData }, ...props }) =>
+        <View style={[styles.headerItem, { ...style, width: Math.floor(screenData / 8) }]} {...props} />
+)
 const HeaderItemLabel = ({ style = {}, ...props }) => <Text style={[styles.headerItemLabel, style]} {...props} />
-const TouchableItem = ({ style = {}, ...props }) => <TouchableOpacity style={[styles.touchableItem, style]} {...props} />
+const TouchableItem = withCalendarConsumer(
+    ({ style = {}, calendarProps: { screenData }, ...props }) =>
+        <TouchableOpacity style={[styles.touchableItem, { ...style, width: Math.floor(screenData / 8) }]} {...props} />
+)
 const TouchableItemLabel = ({ style = {}, ...props }) => <Text style={[styles.touchableItemLabel, style]} {...props} />
 const HR = ({ style = {}, ...props }) => <View style={[styles.hr, style]} {...props} />
 const weekDays = [...Array.from(Array(7).keys())]
@@ -81,10 +90,10 @@ const NextMonthButton = withCalendarConsumer(({
 })
 
 const ControlsRow = () => (
-    <Row>
+    <Row style={{ backgroundColor: 'blue' }}>
         <Cell><MonthDisplay /></Cell>
 
-        <Cell style={{ flexGrow: 2 }} />
+        {/* <Cell style={{ flexGrow: 2 }} /> */}
 
         <Cell style={{ flexGrow: 0 }}>
             <PreviousMonthButton />
@@ -160,7 +169,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'pink',
         minWidth: 20,
         minHeight: 20,
-        width: 35,
         height: 35,
     },
     headerItemLabel: {
@@ -168,6 +176,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     topItem: {
+        backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: 20,
@@ -182,7 +191,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         minWidth: 20,
         minHeight: 20,
-        width: 35,
         height: 35,
     },
     touchableItemLabel: {
@@ -193,7 +201,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         minWidth: 20,
         minHeight: 20,
-        width: 35,
         height: 35,
         borderWidth: 2,
         borderRadius: 20,

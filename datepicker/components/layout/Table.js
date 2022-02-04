@@ -5,9 +5,10 @@ export default Table = ({ style = {}, ...props }) => <View style={[styles.table,
 
 const styles = StyleSheet.create({
     table: {
+        flexWrap: 'wrap',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 20,
+        alignContent: 'center',
     },
 });

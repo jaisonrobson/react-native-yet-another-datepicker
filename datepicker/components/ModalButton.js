@@ -96,10 +96,11 @@ const styles = StyleSheet.create({
     modalBackground: {
         flex: 1,
         justifyContent: "center",
+        alignContent: 'center',
         backgroundColor: '#00000070',
     },
     board: {
-        // margin: 20,
+        margin: 20,
         // backgroundColor: "white",
         backgroundColor: "red",
 

@@ -1,4 +1,5 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
+import { Dimensions } from 'react-native'
 import hoistNonReactStatic from 'hoist-non-react-statics'
 import moment from 'moment'
 
@@ -34,10 +35,16 @@ export const withCalendarProvider = (WrappedComponent) => {
         const parentProps = {
             selectedDate: initialValue,
             selectedMonth: getMonthFirstDate(initialValue),
+            screenData: Dimensions.get('window').width,
             ...props
         }
 
         const [state, setState] = useState(parentProps)
+
+        const onChangeScreenData = () => setState(prevState => ({
+            ...prevState,
+            screenData: Dimensions.get('window').width,
+        }))
 
         const onChangeSelectedDate = (date) => {
             setState({
@@ -56,6 +63,13 @@ export const withCalendarProvider = (WrappedComponent) => {
                 selectedMonth: !isSameMonth(state.selectedMonth, firstMonthDate) ? firstMonthDate : state.selectedMonth
             })
         }
+
+        useEffect(() => {
+            Dimensions.addEventListener('change', onChangeScreenData)
+
+            return () => { Dimensions.removeEventListener('change', onChangeScreenData) }
+        })
+
 
         const value = {
             ...state,
