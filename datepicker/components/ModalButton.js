@@ -100,10 +100,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#00000070',
     },
     board: {
+        backgroundColor: "white",
         margin: 20,
-        // backgroundColor: "white",
-        backgroundColor: "red",
-
         borderRadius: 7,
         elevation: 5,
         shadowColor: "#000",

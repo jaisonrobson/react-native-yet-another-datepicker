@@ -90,7 +90,7 @@ const NextMonthButton = withCalendarConsumer(({
 })
 
 const ControlsRow = ({ style }) => (
-    <Row style={{ backgroundColor: 'blue', ...style }}>
+    <Row style={style}>
         <Cell><MonthDisplay /></Cell>
 
         <Cell style={{ flexGrow: 0 }}>
@@ -164,7 +164,6 @@ const styles = StyleSheet.create({
     headerItem: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'pink',
         minHeight: 20,
         height: 35,
     },
@@ -173,7 +172,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     topItem: {
-        backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: 20,
@@ -183,7 +181,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     touchableItem: {
-        backgroundColor: 'green',
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: 20,
@@ -200,7 +197,6 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderRadius: 20,
         borderColor: 'black',
-        backgroundColor: 'white',
     },
     hr: {
         flex: 1,
