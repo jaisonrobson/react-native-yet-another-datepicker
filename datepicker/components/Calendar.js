@@ -17,12 +17,12 @@ const TopItem = withCalendarConsumer(
 const TopItemLabel = ({ style = {}, ...props }) => <Text style={{ ...styles.topItemLabel, ...style }} {...props} />
 const HeaderItem = withCalendarConsumer(
     ({ style = {}, calendarProps: { screenData }, ...props }) =>
-        <View style={{ ...styles.headerItem, ...style, width: Math.floor(screenData / 9) }} {...props} />
+        <View style={{ ...styles.headerItem, ...style, width: Math.floor(screenData / 10) }} {...props} />
 )
 const HeaderItemLabel = ({ style = {}, ...props }) => <Text style={{ ...styles.headerItemLabel, ...style }} {...props} />
 const TouchableItem = withCalendarConsumer(
     ({ style = {}, calendarProps: { screenData }, ...props }) =>
-        <TouchableOpacity style={{ ...styles.touchableItem, ...style, ...{ width: Math.floor(screenData / 9) } }} {...props} />
+        <TouchableOpacity style={{ ...styles.touchableItem, ...style, width: Math.floor(screenData / 10) }} {...props} />
 )
 const TouchableItemLabel = ({ style = {}, ...props }) => <Text style={{ ...styles.touchableItemLabel, ...style }} {...props} />
 const HR = ({ style = {}, ...props }) => <View style={{ ...styles.hr, ...style }} {...props} />
@@ -165,7 +165,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'pink',
-        minWidth: 20,
         minHeight: 20,
         height: 35,
     },
@@ -187,7 +186,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'green',
         justifyContent: 'center',
         alignItems: 'center',
-        minWidth: 20,
         minHeight: 20,
         height: 35,
     },
@@ -197,7 +195,6 @@ const styles = StyleSheet.create({
     selectedTouchableItem: {
         justifyContent: 'center',
         alignItems: 'center',
-        minWidth: 20,
         minHeight: 20,
         height: 35,
         borderWidth: 2,

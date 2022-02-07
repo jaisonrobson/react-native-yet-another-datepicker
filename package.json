@@ -1,6 +1,6 @@
 {
   "name": "react-native-yet-another-datepicker",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "A react native simple date picker component without dependencies",
   "keywords": [
     "date-picker",
