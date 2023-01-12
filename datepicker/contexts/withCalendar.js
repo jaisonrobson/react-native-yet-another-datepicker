@@ -65,9 +65,9 @@ export const withCalendarProvider = (WrappedComponent) => {
         }
 
         useEffect(() => {
-            Dimensions.addEventListener('change', onChangeScreenData)
+            var subscription = Dimensions.addEventListener('change', onChangeScreenData)
 
-            return () => { Dimensions.removeEventListener('change', onChangeScreenData) }
+            return () => { subscription.remove() }
         })
 
 
